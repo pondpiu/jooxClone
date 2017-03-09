@@ -10,5 +10,5 @@ the lyric are stored and communicated with LRC format :
 [00:21.10]Line 3 lyrics
 ...
 [mm:ss.xx]last lyrics line
->https://en.wikipedia.org/wiki/LRC_(file_format)
 ```
+>https://en.wikipedia.org/wiki/LRC_(file_format)
