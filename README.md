@@ -12,3 +12,35 @@ the lyric are stored and communicated with LRC format :
 [mm:ss.xx]last lyrics line
 ```
 >https://en.wikipedia.org/wiki/LRC_(file_format)
+
+#API
+
+Path: /musics/lyrics/{mid}
+HTTP Method: GET
+Return Data: Lyric object (JSON)
+Description: Get a Lyric object according to the given music ID parameter in the URI
+
+URI parameter
+  - mid(int): Music ID
+
+Example: /musics/lyrics/1
+{
+  "message":{
+    "header":{
+      "status_code":200
+    },
+    "body":{
+      "lyric":{
+        "lyric_id" : "1"
+        "lyric_body": "[00:15.72]You are, my fire
+        [00:20.48]The one, desire
+        [00:25.47]Believe
+        [00:27.88]When I say
+        [00:30.60]That I want it that way
+        ",
+        "lyric_language" : "EN",
+        "version" : "1.0"
+      }
+    }
+  }
+}
