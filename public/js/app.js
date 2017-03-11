@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl','angularSoundManager']);
+angular.module('myApp', ['ngRoute', 'appRoutes', 'MainCtrl','angularSoundManager']);
