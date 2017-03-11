@@ -1,0 +1,29 @@
+body { padding-top:30px; }
+
+.seekBase {
+  height: 30px;
+  width: 90%;
+  border: 1px solid #cccccc;
+}
+.seekLoad {
+	height: 30px;
+  width: 0;
+  background-color: #E0EAF1;
+}
+
+li {
+	cursor: pointer;
+}
+
+.lyric-container{
+  display:flex;align-items:center;
+}
+
+.lyric{
+  margin-left: 50px;
+  text-align: center;
+}
+
+.lyric-p{
+  color:  DarkGrey;
+}

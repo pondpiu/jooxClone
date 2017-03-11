@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="row">
+            <div class="col-md-12">
+
+                <h5>Songs</h5>
+                <ul>
+                    <li ng-repeat="song in songs">
+                        <button music-player="play" add-song="song">{{ song.title }}</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- init soundManager2 player -->
+                <sound-manager></sound-manager>
+								<div class="lyric-container">
+									<div>
+										<p>
+											Lyric :
+										</p>
+									</div>
+									<div class="lyric">
+										<p class="lyric-p">
+												{{bp.text}}
+										</p>
+										<p class="lyric-c">
+												{{b.text}}
+										</p>
+										<p class="lyric-p">
+												{{bn.text}}
+										</p>
+									</div>
+
+								</div>
+                <div class="seekBase" seek-track>
+                    <div class="seekLoad" ng-style="{width : ( progress + '%' ) }"></div>
+                </div>
+								<p>
+										Currently Playing: {{ currentPlaying.title }} by {{ currentPlaying.artist }} ({{ currentPostion }} / {{ currentDuration }})
+								</p>
+                <br />
+
+                <button play-pause-toggle data-play="Play" data-pause="Pause">Play</button>
+                -
+                <button stop-music>Stop</button>
+
+
+
+                <br/>
+                <br/>Volume: {{ volume }} -
+                <button music-volume data-type="increase">+</button>
+                -
+                <button music-volume data-type="decrease">-</button>
+                -
+                <button mute-music>Mute ({{ mute }})</button>
+                <br/>
+                <br/>
+
+            </div>
+        </div>
+</div>
