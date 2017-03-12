@@ -14,7 +14,7 @@ the lyrics are stored and communicated with LRC format :
 >https://en.wikipedia.org/wiki/LRC_(file_format)
 
 #API
-
+GETTING A LYRICS
 Path: /musics/lyrics/{mid}  
 HTTP Method: GET  
 Return Data: Lyric object (JSON)  
@@ -45,6 +45,25 @@ Example: /musics/lyrics/1
     }  
   }  
 }  
+```
+
+POSTING A LYRICS
+Path: /musics/lyrics
+HTTP Method: POST
+Return Data: status(JSON)
+Description: Upload a lyric to mongoDB
+
+URI Parameter
+lyric_id (int): lyric ID
+lyric_body (string): lyrics in LRC format
+lyric_language (string): lyrics's language code (ex. EN)
+version (string): lyrics's version
+
+Example: /musics/lyrics
+```
+{
+  message: 'Lyric created.'
+}
 ```
 
 #mongoDB
