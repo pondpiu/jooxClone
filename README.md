@@ -105,7 +105,7 @@ Example: /musics/lyrics
 }
 ```
 
-**ADDING A SONG**
+#ADDING A SONG
 
-song file should be place at public/song/ (create one if the folder doesn't exist)  
+song file should be placed at public/song/ (create one if the folder doesn't exist)  
 and then located the file in public/js/controllers/MainCtrl.js under $scope.songs
