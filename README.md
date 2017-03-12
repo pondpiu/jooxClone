@@ -32,7 +32,7 @@ Example: /musics/lyrics/1
     },  
     "body":{  
       "lyric":{  
-        "lyric_id" : "1"  
+        "lyric_id" : "1",  
         "lyric_body": "[00:15.72]You are, my fire  
         [00:20.48]The one, desire  
         [00:25.47]Believe  
