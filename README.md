@@ -148,7 +148,7 @@ URI Parameter
   - id (int): song ID
   - title (string): song's title
   - artist (string): song's artist
-  - url (string): lsong's url (.mp3)
+  - url (string): song's url (.mp3)
 
 Example: /musics/songs
 ```
