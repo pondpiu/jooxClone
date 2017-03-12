@@ -27,12 +27,14 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
 		 });
 
 		 $scope.$on('track:id',function(event,data){
+			 clearLyric();
 			 requestLyric(data);
 		 });
 
 		 function requestLyric(mid){
 			 $http.get($location.absUrl()+'musics/lyrics/'+mid)
 			 .then(function(res){
+				 console.log(res);
 				 if(res.data.message.header.status_code == 200){
 				 $scope.lyric = res.data.message.body.lyric.lyric_body;
 				 $scope.lrc = new Lyrics($scope.lyric);
@@ -40,6 +42,13 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
 				 console.log("ERROR requesting lyric code : "+ res.data.message.header.status_code);
 			 	}
 			});
+		 }
+
+		 function clearLyric(){
+			 $scope.lrc = null;
+			 $scope.b = `[LOADING LYRICS]`;
+			 $scope.bp = null;
+			 $scope.bn = null;
 		 }
 
 });

@@ -3,7 +3,7 @@ part of an application for internship
 
 #Formatting
 
-the lyric are stored and communicated with LRC format :
+the lyrics are stored and communicated with LRC format :
 ```
 [00:12.00]Line 1 lyrics
 [00:17.20]Line 2 lyrics
