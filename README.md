@@ -104,3 +104,8 @@ Example: /musics/lyrics
   message: 'Lyric created.'
 }
 ```
+
+**ADDING A SONG**
+
+song file should be place at public/song/ (create one if the folder doesn't exist)
+and then located the file in public/js/controllers/MainCtrl.js under $scope.songs
