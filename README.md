@@ -49,6 +49,7 @@ Example: /musics/lyrics/1
 
 #mongoDB
 the project need an instance of mongoDB to function
+
 setting environment variable pointing to mongoDB
 
 for windows
