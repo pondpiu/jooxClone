@@ -51,56 +51,6 @@ the lyrics are stored and communicated with LRC format :
 >https://en.wikipedia.org/wiki/LRC_(file_format)
 
 #API
-**GETTING A SONGS**  
-Path: /musics/songs  
-HTTP Method: GET  
-Return Data: Array of Song objects (JSON)  
-Description: Get a list of song available  
-
-Example: /musics/songs  
-```
-  "message": {
-    "header": {
-      "status_code": 200
-    },
-    "body": {
-      "song": [
-        {
-          "id": 1,
-          "title": "I want it that way",
-          "artist": "Backstreet boy",
-          "url": "https://example.com/song/iwantitthatway.mp3",
-        },
-        {
-          "id": 2,
-          "title": "All star",
-          "artist": "Smashmouth",
-          "url": "https://example.com/song/allstar.mp3",
-        }
-      ]
-    }
-  }
-}
-```
-
-**ADDING A SONG**  
-Path: /musics/songs  
-HTTP Method: POST  
-Return Data: status(JSON)  
-Description: added a song object to mongoDB  
-
-URI Parameter  
-  - id (int): song ID
-  - title (string): song's title
-  - artist (string): song's artist
-  - url (string): lsong's url (.mp3)
-
-Example: /musics/songs
-```
-{
-  message: 'Songs added.'
-}
-```
 
 **GETTING A LYRICS**
 
@@ -156,3 +106,53 @@ Example: /musics/lyrics
 }
 ```
 
+**GETTING A SONGS**  
+Path: /musics/songs  
+HTTP Method: GET  
+Return Data: Array of Song objects (JSON)  
+Description: Get a list of song available  
+
+Example: /musics/songs  
+```
+  "message": {
+    "header": {
+      "status_code": 200
+    },
+    "body": {
+      "song": [
+        {
+          "id": 1,
+          "title": "I want it that way",
+          "artist": "Backstreet boy",
+          "url": "https://example.com/song/iwantitthatway.mp3",
+        },
+        {
+          "id": 2,
+          "title": "All star",
+          "artist": "Smashmouth",
+          "url": "https://example.com/song/allstar.mp3",
+        }
+      ]
+    }
+  }
+}
+```
+
+**ADDING A SONG**  
+Path: /musics/songs  
+HTTP Method: POST  
+Return Data: status(JSON)  
+Description: added a song object to mongoDB  
+
+URI Parameter  
+  - id (int): song ID
+  - title (string): song's title
+  - artist (string): song's artist
+  - url (string): lsong's url (.mp3)
+
+Example: /musics/songs
+```
+{
+  message: 'Songs added.'
+}
+```
