@@ -1,20 +1,21 @@
 angular.module('MainCtrl', []).controller('MainController', function($scope, $location, $http) {
 
 	$scope.songs = [
-					 {
-							 id: '1',
-							 title: 'I want it that way',
-							 artist: 'Backstreet boy',
-							 url: $location.absUrl()+'/song/iwantitthatway.mp3'
-					 },
-					 {
-						 id: '2',
-						 title: 'All star',
-						 artist: 'Smashmouth',
-						 url: $location.absUrl()+'/song/allstar.mp3'
-					 }
+					//  {
+					// 		 id: '1',
+					// 		 title: 'I want it that way',
+					// 		 artist: 'Backstreet boy',
+					// 		 url: $location.absUrl()+'/song/iwantitthatway.mp3'
+					//  },
+					//  {
+					// 	 id: '2',
+					// 	 title: 'All star',
+					// 	 artist: 'Smashmouth',
+					// 	 url: $location.absUrl()+'/song/allstar.mp3'
+					//  }
 			 ];
 
+			 requestSongList();
 			 //callEvent from music player
 			 // data : current track time in millisecond
 			 $scope.$on('currentTrack:position', function(event, data) {
@@ -31,10 +32,20 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
 			 requestLyric(data);
 		 });
 
+		 function requestSongList(){
+			 $http.get($location.absUrl()+'musics/songs/')
+			 .then(function(res){
+				 if(res.data.message.header.status_code == 200){
+					 $scope.songs = res.data.message.body.song;
+				 }else{
+					 console.log("ERROR requesting song list code : "+ res.data.message.header.status_code);
+				 }
+			 })
+		 }
+
 		 function requestLyric(mid){
 			 $http.get($location.absUrl()+'musics/lyrics/'+mid)
 			 .then(function(res){
-				 console.log(res);
 				 if(res.data.message.header.status_code == 200){
 				 $scope.lyric = res.data.message.body.lyric.lyric_body;
 				 $scope.lrc = new Lyrics($scope.lyric);
@@ -49,6 +60,7 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
 			 $scope.b = `[LOADING LYRICS]`;
 			 $scope.bp = null;
 			 $scope.bn = null;
+			
 		 }
 
 });

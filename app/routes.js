@@ -1,5 +1,6 @@
 module.exports = function(app) {
 	var Lyric = require('../app/models/lyric');
+	var Song = require('../app/models/song');
 
 	// server routes ===========================================================
 
@@ -21,7 +22,7 @@ module.exports = function(app) {
 		})
 	});
 
-	//api for create a lyric
+	//api for adding a lyric
 	app.post('/musics/lyrics',function(req,res){
 		var lyric = new Lyric(); // create a new instance of the Lyric model
 		lyric.lyric_id = req.body.lyric_id;
@@ -32,7 +33,40 @@ module.exports = function(app) {
 		//save the lyric
 		lyric.save(function(err){
 			if(err){res.send(err);}
-			res.json({message: 'Lyric created.'});
+			res.json({message: 'Lyric added.'});
+		});
+	});
+
+	//api for getting list of songs
+	app.get('/musics/songs',function(req,res){
+		Song.find(function(err,songs){
+			if(err)
+				res.send(err);
+			res.json({
+				"message":{
+					"header":{
+						"status_code":200
+					},
+					"body":{
+						"song":songs
+					}
+				}
+			})
+		})
+	});
+
+	//api for adding a song
+	app.post('/musics/songs',function(req,res){
+		var song = new Song(); // create a new instance of the Lyric model
+		song.id = req.body.id;
+		song.title = req.body.title;
+		song.artist = req.body.artist;
+		song.url = req.body.url;
+
+		//save the lyric
+		song.save(function(err){
+			if(err){res.send(err);}
+			res.json({message: 'Song added.'});
 		});
 	});
 
