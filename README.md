@@ -46,3 +46,16 @@ Example: /musics/lyrics/1
   }  
 }  
 ```
+
+#mongoDB
+the project need an instance of mongoDB to function
+setting environment variable pointing to mongoDB
+for windows
+```
+SET MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
+```
+
+for \*nix
+```
+export MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
+```
