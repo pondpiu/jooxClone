@@ -1,6 +1,43 @@
 #JooxClone
 part of an application for internship
 
+#Installation  
+- Clone the project
+- go to root directory
+```
+cd jooxClone
+```
+- install depedencies
+```
+npm install
+```
+- configure mongoDB URI
+
+#mongoDB
+the project need an instance of mongoDB to function
+
+setting environment variable pointing to mongoDB
+
+for windows
+```
+SET MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
+```
+
+for \*nix
+```
+export MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
+```
+
+#Running
+- go to root directory
+```
+cd jooxClone
+```
+- starting node server (default port 8080) 
+```
+node server.js 
+```
+
 #Formatting
 
 the lyrics are stored and communicated with LRC format :
@@ -68,17 +105,7 @@ Example: /musics/lyrics
 }
 ```
 
-#mongoDB
-the project need an instance of mongoDB to function
+#ADDING A SONG
 
-setting environment variable pointing to mongoDB
-
-for windows
-```
-SET MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
-```
-
-for \*nix
-```
-export MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
-```
+song file should be placed at public/song/ (create one if the folder doesn't exist)  
+and then located the file in public/js/controllers/MainCtrl.js under $scope.songs
