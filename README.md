@@ -15,6 +15,7 @@ the lyrics are stored and communicated with LRC format :
 
 #API
 GETTING A LYRICS
+
 Path: /musics/lyrics/{mid}  
 HTTP Method: GET  
 Return Data: Lyric object (JSON)  
@@ -48,6 +49,7 @@ Example: /musics/lyrics/1
 ```
 
 POSTING A LYRICS
+
 Path: /musics/lyrics
 HTTP Method: POST
 Return Data: status(JSON)
