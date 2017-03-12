@@ -5,13 +5,13 @@ angular.module('MainCtrl', []).controller('MainController', function($scope, $lo
 							 id: '1',
 							 title: 'I want it that way',
 							 artist: 'Backstreet boy',
-							 url: $location.absUrl()+'/song/1.mp3'
+							 url: $location.absUrl()+'/song/iwantitthatway.mp3'
 					 },
 					 {
 						 id: '2',
 						 title: 'All star',
 						 artist: 'Smashmouth',
-						 url: $location.absUrl()+'/song/2.mp3'
+						 url: $location.absUrl()+'/song/allstar.mp3'
 					 }
 			 ];
 
