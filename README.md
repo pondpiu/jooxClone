@@ -1,7 +1,7 @@
-#JooxClone
+# JooxClone
 part of an application for internship
 
-#Installation  
+# Installation  
 - Clone the project
 - go to root directory
 ```
@@ -13,7 +13,7 @@ npm install
 ```
 - configure mongoDB URI
 
-#mongoDB
+# mongoDB
 the project need an instance of mongoDB to function
 
 setting environment variable pointing to mongoDB
@@ -28,7 +28,7 @@ for \*nix
 export MONGOLAB_URI="mongodb://example:example@ds054324.mongolab.com:55482/example"
 ```
 
-#Running
+# Running
 - go to root directory
 ```
 cd jooxClone
@@ -38,7 +38,7 @@ cd jooxClone
 node server.js 
 ```
 
-#Formatting
+# Formatting
 
 the lyrics are stored and communicated with LRC format :
 ```
@@ -50,7 +50,7 @@ the lyrics are stored and communicated with LRC format :
 ```
 >https://en.wikipedia.org/wiki/LRC_(file_format)
 
-#API
+# API
 
 **GETTING A LYRICS**
 
